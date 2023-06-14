@@ -1,6 +1,9 @@
+import contactRoutes from './contactRoutes.js';
+import userRoutes from './userRoutes.js';
+
 const routes = (app) => {
-  app.use('/api/contacts', require('./contactRoutes'));
-  app.use('/api/users', require('./userRoutes'));
+  app.use('/api/contacts', contactRoutes);
+  app.use('/api/users', userRoutes);
 };
 
-module.exports = routes;
+export default routes;

@@ -1,5 +1,5 @@
-const asyncHandler = require('express-async-handler');
-const Contact = require('../models/contactModel');
+import asyncHandler from 'express-async-handler';
+import Contact from './../models/contactModel.js';
 
 // Get all contacts
 const getAllContacts = asyncHandler(async (req, res) => {
@@ -93,7 +93,7 @@ const deleteContact = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = {
+export {
   getAllContacts,
   createContact,
   getContact,

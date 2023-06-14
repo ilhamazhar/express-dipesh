@@ -1,7 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema(
   {
+    role_id: {
+      type: Number,
+      required: true,
+    },
     name: {
       type: String,
       required: [true, 'Please add the user name'],
@@ -26,4 +30,4 @@ const userSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);

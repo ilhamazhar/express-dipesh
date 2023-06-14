@@ -1,8 +1,10 @@
-const express = require('express');
-const errorHandler = require('./middleware/errorHandler');
-const connectDB = require('./config/dbConnection');
-const dotenv = require('dotenv').config();
-const routes = require('./routes');
+import express from 'express';
+import errorHandler from './middleware/errorHandler.js';
+import connectDB from './config/dbConnection.js';
+import dotenv from 'dotenv';
+import routes from './routes/index.js';
+
+dotenv.config();
 
 connectDB();
 const port = process.env.SERVER_PORT || 5000;

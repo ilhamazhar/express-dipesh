@@ -1,13 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const validateToken = require('../middleware/validateTokenHandler');
-const {
+import express from 'express';
+import validateToken from '../middleware/validateTokenHandler.js';
+import {
   getAllContacts,
   createContact,
   getContact,
   editContact,
   deleteContact,
-} = require('./../controllers/contactController');
+} from '../controllers/contactController.js';
+
+const router = express.Router();
 
 // Start token validation
 router.use(validateToken);
@@ -15,4 +16,4 @@ router.route('/').get(getAllContacts).post(createContact);
 router.route('/:id').get(getContact).put(editContact).delete(deleteContact);
 // End token validation
 
-module.exports = router;
+export default router;
